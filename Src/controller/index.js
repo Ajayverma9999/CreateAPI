@@ -30,17 +30,10 @@ module.exports.login= async (req, res) => {
         console.log("This is user=>")
 
       const user = await userModule.findOne({username: username});
-    // const user = false;
+    
       console.log("This is user=>", user)
-    //   !user && res.status(400).json("wrong credentials!")
-  
-    //   const validate = await bcrypt.compare(req.body.password, user.password)
-    //   !validate && res.status(400).json("wrong credentials!")
-  
-  
-    //   const {password, ...others} = user._doc;
   if(user){
-    // res.status(200).json("Login Successfully");
+    
     res.status(200).send({
         status:"success",
         message:"User Created Successfully",
